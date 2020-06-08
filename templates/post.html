@@ -23,8 +23,10 @@
                 {% endfor %}
               </div>
               <div>
-                <a href="">Update</a>
-                <a href="">Delete</a>
+                {% if request.user.is_superuser %}
+                <a href="{% url 'post-update' id=post.id %}">Update</a>
+                <a href="{% url 'post-delete' id=post.id %}">Delete</a>
+                {% endif %}
               </div>
             </div>
             <h1>{{ post.title }}<a href="#"><i class="fa fa-bookmark-o"></i></a></h1>
@@ -36,7 +38,7 @@
               <div class="d-flex align-items-center flex-wrap">
                 <div class="date"><i class="icon-clock"></i> {{ post.timestamp|timesince}} ago</div>
                 <div class="views"><i class="icon-eye"></i> {{ post.view_count }}</div>
-                <div class="comments meta-last"><i class="icon-comment"></i>{{ post.comment_count }}</div>
+                <div class="comments meta-last"><i class="icon-comment"></i>{{ post.comments_count }}</div>
               </div>
             </div>
             <div class="post-body">
@@ -65,7 +67,7 @@
             </div>
             <div class="post-comments">
               <header>
-                <h3 class="h6">Post Comments<span class="no-of-comments">({{ post.comments.count }})</span></h3>
+                <h3 class="h6">Post Comments<span class="no-of-comments">({{ post.comments_count }})</span></h3>
               </header>
               {% for comment in post.get_comments %}
               <div class="comment">

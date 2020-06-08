@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+<style>
+    .mce-tinymce {
+        width: 1200px !important;
+    }
+    #div_id_content{
+        display: flex;
+        justify-content: center;
+    }
+</style>
+<div class="col-4 offset-4 mt-4 mb-4 jj" >
+    <h2>{{ title }} post</h2>
+    {{form.media}}
+    <form action="." method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+
+        {{ form|crispy }}
+        <button class="btn btn-primary" type="submit">Submit</button>
+    </form>
+
+</div>
+
+{% endblock %}
