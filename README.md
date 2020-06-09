@@ -35,3 +35,6 @@ $ python manage.py runserver
 ``` 
 # Result : 
 ## check the live result [here](http://gitsalahe.pythonanywhere.com/)
+login first :
+username: Anonymous-user
+password: 02170217S
