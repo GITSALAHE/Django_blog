@@ -4,7 +4,7 @@
 
 [![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](http://gitsalahe.pythonanywhere.com/)
 
-GitSalah blog is a general blog,Maded with Django language.
+GitSalah blog is a general blog, built with with Django language.
 
 
 
@@ -17,7 +17,7 @@ after type to activat (env)
 ```sh 
 $ \env\Script\activate
 ```
-install django in your env :
+install Django in your env :
 ```sh
 $ pip install django
 ``` 
